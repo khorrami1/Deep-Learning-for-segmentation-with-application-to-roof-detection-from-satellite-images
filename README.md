@@ -54,6 +54,8 @@ model.compile(optimizer=optimizer, loss=['MSE'], metrics=['MSE'])
 history = model.fit(input_train, output_train, batch_size=batch_size, epochs=num_epoch,
  validation_data=(input_val, output_val))
  
+ ![alt text](https://github.com/khorrami1/Deep-Learning-for-segmentation-with-application-to-roof-detection-from-satellite-images/blob/main/loss_epoch.png)
+ 
 # 4- Testing the nmodel: 
 
 model.evaluate(input_val, output_val)
