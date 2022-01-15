@@ -69,3 +69,32 @@ model.save(directory_model, save_format='tf')
 
 ![alt text](https://github.com/khorrami1/Deep-Learning-for-segmentation-with-application-to-roof-detection-from-satellite-images/blob/main/result.png)
 
+# 7- visualize the model
+
+How to plot keras models using plot_model on Windows10
+
+We use the plot_model library:
+from tensorflow.keras.utils import plot_model
+
+Plot_model requires Pydot and graphviz libraries.
+
+To install Graphviz: 
+Download and install the latest version exe
+https://gitlab.com/graphviz/graphviz/... 
+
+To check the installation,
+go to the command prompt and enter: dot -V
+
+Open Anaconda prompt for the ​desired environment 
+
+pip install pydot
+pip install graphviz
+
+tf.keras.utils.plot_model(
+    loaded_model, to_file='model.png', show_shapes=True, show_dtype=False,
+    show_layer_names=False, rankdir='TB', expand_nested=False, dpi=200,
+    layer_range=None, show_layer_activations=False
+)
+
+ ![alt text]()
+
