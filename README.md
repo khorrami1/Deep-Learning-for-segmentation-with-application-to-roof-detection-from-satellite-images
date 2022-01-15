@@ -65,5 +65,5 @@ model.save(directory_model, save_format='tf')
 
 # 6- Results:
 
-![alt text]()
+![alt text](https://github.com/khorrami1/Deep-Learning-for-segmentation-with-application-to-roof-detection-from-satellite-images/blob/main/result.png)
 
