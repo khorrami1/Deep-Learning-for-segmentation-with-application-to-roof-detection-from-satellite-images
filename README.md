@@ -3,9 +3,9 @@ Deep Learning for segmentation, with application to roof detection from satellit
 
 In this project, a few images, around 25 images from sattelites and the corresponding mask (label) images are given. We aim to obtain a neural network to detect roofs from satellite images. To do so, we perform the following steps: (Pretraining: see the notebook pre_training.ipynb, training and test: see main_training.ipynb)
 
-1- Extending datastore, making new images from the original images by the technique of augmentation. For more details, see the following link:
-# Author: Marcus D. Bloice <https://github.com/mdbloice> and contributors
-# Licensed under the terms of the MIT Licence.
+# 1- Extending datastore, making new images from the original images by the technique of augmentation. For more details, see the following link:
+Author: Marcus D. Bloice <https://github.com/mdbloice> and contributors
+Licensed under the terms of the MIT Licence.
 
 We randomly rotate images and crop them using Augmentor module:
 
@@ -17,11 +17,11 @@ p.rotate_random_90(probability=1)
 
 num_samples = int(1000)
 
-# Now we can sample from the pipeline:
+Now we can sample from the pipeline:
 
 augmented_data = p.sample(num_samples)
 
-2- Creating a custom unet from this module: (from keras_unet.models import custom_unet - https://github.com/karolzak/keras-unet) with the folloing options:
+# 2- Creating a custom unet from this module: (from keras_unet.models import custom_unet - https://github.com/karolzak/keras-unet) with the folloing options:
 
 model = custom_unet(
     input_shape=(img_size_x, img_size_y, num_channels_inp),
@@ -34,7 +34,7 @@ model = custom_unet(
 
 Note that the activation function "tanh" is so helpful for this segmentation.  
 
-3- Training the model in 100 epochs with the following options:
+# 3- Training the model in 100 epochs with the following options:
 
 num_epoch = 100
 
@@ -49,11 +49,11 @@ model.compile(optimizer=optimizer, loss=['MSE'], metrics=['MSE'])
 history = model.fit(input_train, output_train, batch_size=batch_size, epochs=num_epoch,
  validation_data=(input_val, output_val))
  
-4- Testing the nmodel: 
+# 4- Testing the nmodel: 
 
 model.evaluate(input_val, output_val)
 
-5- Saving the model:
+# 5- Saving the model:
 directory_model = 'saved_model'
 
 model.save(directory_model, save_format='tf')
