@@ -71,7 +71,7 @@ model.save(directory_model, save_format='tf')
 
 # 7- visualize the model
 
-How to plot keras models using plot_model on Windows10
+How to plot keras models using plot_model on Windows10:
 
 We use the plot_model library:
 from tensorflow.keras.utils import plot_model
@@ -96,5 +96,5 @@ tf.keras.utils.plot_model(
     layer_range=None, show_layer_activations=False
 )
 
- ![alt text]()
+ ![alt text](https://github.com/khorrami1/Deep-Learning-for-segmentation-with-application-to-roof-detection-from-satellite-images/blob/main/model.png)
 
